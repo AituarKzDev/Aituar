@@ -1,4 +1,8 @@
-<!doctype html><html lang="ru"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>STROY GOOD — газоблок в Астане, цены и заказ</title>
 <meta name="description" content="Завод автоклавного газоблока STROY GOOD в Астане. Интерактивная 3D-экскурсия по производству, цены от 42 300 ₸/м³, калькулятор, доставка длинномером.">
 <link rel="icon" href="img/logo.png">
@@ -7,204 +11,303 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/photo-sizes.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: светлый изометрический «макет завода» на весь первый экран, камера летит по цепочке производства; ниже — спокойные белые разделы с продажной информацией */
+/* Layout: продуктовая страница в духе Apple. Тонкая шапка, липкое подменю «Газоблок D500», центрированный первый экран над фото блока,
+   дальше полосы на всю ширину (белая / светло-серая / чёрная) с крупными заголовками слева и плитками характеристик. Одна светлая тема с намеренно тёмными полосами. */
 :root{
-  --bg:#F4F3EF; --paper:#FFFFFF; --ink:#1B1C1F; --ink-2:#4A4945; --muted:#6B6861; --line:#E2DED5;
-  --red:#C4202A; --red-ink:#A51A23; --yellow:#F2BC12; --sky:#C9DAE7;
-  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
-  --f-body:"Manrope","Segoe UI",system-ui,sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
-  --wrap:1240px;
+  --paper:#FFFFFF;      /* белые полосы и плитки */
+  --mist:#F4F3F1;       /* светло-серые полосы, тёплый оттенок как у газобетона */
+  --stone:#D3D0C9;      /* фон первого экрана, совпадает с фоном фото блока */
+  --night:#0B0B0C;      /* чёрная полоса 3D-завода */
+  --night-tile:#1C1C1E; /* тёмные плитки */
+  --ink:#1D1D1F; --ink-2:#424245; --muted:#6E6E73; --hair:#D2D2D7; --seg:#E6E5E2;
+  --on-night:#F5F5F7; --on-night-muted:#A1A1A6; --night-hair:rgba(255,255,255,.14);
+  --red:#C4202A; --red-ink:#A51A23; --orange:#E8661E; --yellow:#F2BC12; --wa:#1FA855; --wa-ink:#178A45;
+  --warn:#FF8A8F; --ok:#1FA855; --sky:#C9DAE7;
+  --glass:rgba(255,255,255,.78); --glass-strong:rgba(255,255,255,.9);
+  --grad:linear-gradient(90deg,var(--red) 0%,var(--orange) 55%,var(--yellow) 100%);
+
+  --f-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Onest","Helvetica Neue",Arial,sans-serif;
+  --f-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Onest","Helvetica Neue",Arial,sans-serif;
+
+  --fs-hero:clamp(52px,8.4vw,104px);
+  --fs-h2:clamp(36px,5.6vw,64px);
+  --fs-h3:clamp(24px,2.6vw,32px);
+  --fs-sub:clamp(21px,2.4vw,28px);
+  --fs-lead:clamp(17px,1.6vw,21px);
+  --fs-body:17px; --fs-small:14px; --fs-micro:12px;
+
+  --wrap:1080px; --wrap-wide:1280px; --gutter:clamp(16px,4vw,32px);
+  --r-tile:28px; --r-card:20px; --r-field:12px;
+  --band:clamp(80px,11vw,140px);
+  --lnav:52px;
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--lnav) + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-text);font-size:var(--fs-body);line-height:1.47;letter-spacing:-.011em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 [hidden]{display:none!important}
 a{color:var(--red-ink)}
-:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
-h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.1;margin:0;text-wrap:balance}
-h2{font-size:clamp(28px,3.8vw,44px)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.022em}
+h1{font-size:var(--fs-hero);line-height:1.02;letter-spacing:-.03em}
+h2{font-size:var(--fs-h2);line-height:1.05}
+h3{font-size:var(--fs-h3);line-height:1.12}
 p{margin:0}
-.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:clamp(16px,4vw,32px)}
-.eyebrow{font-family:var(--f-mono);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red-ink)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:6px;font-weight:800;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--f-body);transition:background .2s,color .2s,transform .2s}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:calc(var(--wrap) + 2*var(--gutter));margin:0 auto;padding-inline:var(--gutter)}
+.wrap-wide{max-width:calc(var(--wrap-wide) + 2*var(--gutter));margin:0 auto;padding-inline:var(--gutter)}
+
+/* ---------- кнопки и ссылки ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 22px;border-radius:980px;font:500 17px/1 var(--f-text);letter-spacing:-.011em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
 .btn-red{background:var(--red);color:#fff}
 .btn-red:hover{background:var(--red-ink);color:#fff}
-.btn-line{border-color:var(--red);color:var(--red-ink);background:var(--paper)}
+.btn-line{background:transparent;color:var(--red-ink);border-color:var(--red)}
 .btn-line:hover{background:var(--red);color:#fff}
-.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.btn-sm{min-height:28px;padding:0 12px;font-size:12px;font-weight:500}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-ink);color:#fff}
+.more{color:var(--red-ink);text-decoration:none;font-size:var(--fs-lead);display:inline-flex;align-items:center;gap:4px}
+.more::after{content:"›";font-size:1.15em;line-height:1;transform:translateY(-.03em)}
+.more:hover{text-decoration:underline}
+.on-night .more{color:#FF6B72}
+.copyn{border:0;background:none;padding:0;cursor:pointer;font-family:inherit;text-align:left;user-select:all;color:inherit}
+.copyn.ok::after{content:" ✓ скопирован";font-size:12px;font-weight:600;color:var(--ok)}
 
 /* ---------- шапка ---------- */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 28px;flex-wrap:wrap;padding-block:8px}
-.top nav{display:flex;gap:4px 22px;font-weight:700;font-size:15px;flex-wrap:wrap}
-.top nav a{color:var(--ink);text-decoration:none}
-.top nav a:hover{color:var(--red)}
-.top .call{display:flex;align-items:center;gap:14px}
-.top .phone{font-weight:800;color:var(--ink);text-decoration:none;font-variant-numeric:tabular-nums}
-.copyn{border:0;background:none;padding:0;cursor:pointer;font-family:inherit;text-align:left;user-select:all}
-.copyn.ok::after{content:" ✓ скопирован";font-size:12px;font-weight:700;color:#1FA855}
-.top .btn{min-height:40px;padding:0 16px;font-size:14px}
+.gnav{background:var(--mist);font-size:var(--fs-micro);position:relative;z-index:70}
+.gnav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px}
+.gnav .logo{display:block;width:104px;flex:none}
+.gnav .meta{display:flex;align-items:center;gap:18px;color:var(--ink-2)}
+.gnav .meta span{color:var(--muted)}
+.gnav .phone{font-size:13px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
 
-/* ---------- 3D-мир ---------- */
-.world{position:relative;height:clamp(600px,calc(100vh - 58px),940px);background:var(--sky);overflow:hidden}
+.lnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:var(--glass);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+.lnav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--lnav)}
+.lnav .ttl{font-family:var(--f-display);font-size:21px;font-weight:600;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.lnav .right{display:flex;align-items:center;gap:22px}
+.lnav nav{display:flex;gap:22px}
+.lnav nav a{font-size:var(--fs-micro);color:var(--ink-2);text-decoration:none}
+.lnav nav a:hover{color:var(--red-ink)}
+.lnav .chev{display:none;width:32px;height:32px;border:0;background:none;cursor:pointer;color:var(--ink);border-radius:50%;place-items:center}
+.lnav .chev svg{transition:transform .25s}
+.lnav.open .chev svg{transform:rotate(180deg)}
+
+/* ---------- полосы ---------- */
+.band{padding-block:var(--band)}
+.band-mist{background:var(--mist)}
+.band-night{background:var(--night);color:var(--on-night)}
+.head{display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(36px,5vw,64px);max-width:820px}
+.eyebrow{font-size:var(--fs-lead);font-weight:600;color:var(--red-ink);letter-spacing:-.01em}
+.on-night .eyebrow{color:#FF6B72}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:620px;line-height:1.42}
+.on-night .lead{color:var(--on-night-muted)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- первый экран ---------- */
+.hero{background:var(--stone);text-align:center;overflow:hidden;padding-top:clamp(48px,7vw,88px)}
+.hero .wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+.hero .eyebrow{font-size:var(--fs-lead)}
+.hero .sub{font-family:var(--f-display);font-size:var(--fs-sub);font-weight:600;letter-spacing:-.02em;line-height:1.15;max-width:760px}
+.hero .lead{color:var(--ink-2);margin-top:4px}
+.hero .price{font-size:var(--fs-lead);color:var(--ink);margin-top:6px}
+.hero .price sup,.fn-ref{font-size:.6em;margin-left:1px}
+.hero .ctas{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 28px;margin-top:12px}
+.hero-img{width:min(920px,100%);height:auto;margin:clamp(8px,2vw,24px) auto 0;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 16%,#000 86%,transparent 100%),linear-gradient(to right,transparent 0,#000 11%,#000 89%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to bottom,transparent 0,#000 16%,#000 86%,transparent 100%),linear-gradient(to right,transparent 0,#000 11%,#000 89%,transparent 100%);
+  mask-composite:intersect}
+.hero .ticks{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 40px;padding-block:8px clamp(40px,6vw,72px);color:var(--ink-2);font-size:var(--fs-small)}
+.hero .ticks b{display:block;font-family:var(--f-display);font-size:var(--fs-sub);font-weight:600;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+
+/* ---------- плитки характеристик ---------- */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.tile{background:var(--paper);border-radius:var(--r-tile);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:10px;min-width:0;overflow:hidden;position:relative}
+.tile .big{font-family:var(--f-display);font-size:clamp(44px,5.4vw,72px);font-weight:700;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tile .unit{font-size:var(--fs-lead);font-weight:600;color:var(--ink)}
+.tile p{color:var(--muted);font-size:var(--fs-body)}
+.tile .more{font-size:var(--fs-body);margin-top:auto;padding-top:8px}
+.t-photo{grid-column:span 4;grid-row:span 2;padding:0;justify-content:flex-start}
+.t-photo .txt{padding:clamp(24px,3vw,40px) clamp(24px,3vw,40px) 0;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1}
+.t-photo .txt p{max-width:420px}
+.t-photo img{width:100%;flex:1 1 0;min-height:280px;height:auto;object-fit:cover;object-position:50% 70%;margin-top:clamp(16px,2vw,28px)}
+.t-sm{grid-column:span 2}
+.t-dark{background:var(--night-tile);color:var(--on-night)}
+.t-dark .unit{color:var(--on-night)}
+.t-dark p{color:var(--on-night-muted)}
+.t-dark .more{color:#FF6B72}
+
+/* ---------- 3D-завод ---------- */
+.world-box{position:relative;height:clamp(560px,78vh,820px);border-radius:var(--r-tile);overflow:hidden;background:var(--sky)}
 .stage{position:absolute;inset:0;overflow:hidden}
 .stage canvas{display:block;width:100%;height:100%;cursor:grab}
 .stage canvas.drag{cursor:grabbing}
-.stage .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;padding:24px;text-align:center}
+.stage .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:15px;padding:24px;text-align:center}
 .pins{position:absolute;inset:0;pointer-events:none}
-.pin{position:absolute;left:0;top:0;pointer-events:auto;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;gap:8px;transform:translate(-11px,-11px);font-family:var(--f-body)}
+.pin{position:absolute;left:0;top:0;pointer-events:auto;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;gap:8px;transform:translate(-11px,-11px);font-family:var(--f-text)}
 .pin i{width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.18);display:grid;place-items:center;flex:none}
 .pin i::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--red)}
-.pin span{background:#fff;color:var(--ink);font-size:13px;font-weight:800;padding:4px 10px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap;opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
+.pin span{background:var(--glass-strong);color:var(--ink);font-size:13px;font-weight:600;padding:4px 10px;border-radius:980px;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap;opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
 .pin:hover span,.pin:focus-visible span{opacity:1;transform:none}
 .pin.on i{background:var(--red);animation:ping 1.8s ease-out infinite}
 .pin.on i::after{background:#fff}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(196,32,42,.45)}100%{box-shadow:0 0 0 16px rgba(196,32,42,0)}}
 
-.card{position:absolute;left:clamp(16px,3vw,40px);bottom:92px;width:min(420px,calc(100% - 32px));background:rgba(255,255,255,.95);border-radius:6px;padding:26px 26px 22px;box-shadow:0 10px 40px rgba(30,30,30,.12);display:flex;flex-direction:column;gap:14px;z-index:5}
-.card .eyebrow{display:flex;gap:10px;align-items:center}
-.card .eyebrow b{color:var(--ink);font-weight:700}
-.card h1,.card .h{font-family:var(--f-display);font-size:clamp(22px,2.2vw,30px);font-weight:700;line-height:1.12}
-.card p{color:var(--ink-2);font-size:15.5px}
-.facts{display:flex;flex-wrap:wrap;gap:8px 22px;padding-top:12px;border-top:1px solid var(--line)}
+.card{position:absolute;left:clamp(16px,2.5vw,32px);bottom:84px;width:min(410px,calc(100% - 32px));background:var(--glass-strong);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);color:var(--ink);border-radius:var(--r-card);padding:26px 26px 22px;box-shadow:0 20px 50px rgba(0,0,0,.16);display:flex;flex-direction:column;gap:12px;z-index:5}
+.card .step{display:flex;gap:8px;align-items:baseline;font-size:var(--fs-small);font-weight:600;color:var(--muted)}
+.card .step b{color:var(--red-ink);font-variant-numeric:tabular-nums}
+.card .h{font-family:var(--f-display);font-size:clamp(22px,2.2vw,28px);font-weight:600;line-height:1.12;letter-spacing:-.02em;text-wrap:balance}
+.card p{color:var(--ink-2);font-size:15px;line-height:1.45}
+.facts{display:flex;flex-wrap:wrap;gap:8px 24px;padding-top:12px;border-top:1px solid var(--hair)}
 .facts div{display:flex;flex-direction:column}
-.facts b{font-family:var(--f-display);font-size:17px;font-weight:700}
-.facts span{font-size:12.5px;color:var(--muted)}
+.facts b{font-family:var(--f-display);font-size:19px;font-weight:600;letter-spacing:-.015em;font-variant-numeric:tabular-nums}
+.facts span{font-size:12px;color:var(--muted)}
 .card .ctas{display:flex;flex-wrap:wrap;gap:10px}
-.card .ctas .btn{min-height:42px;font-size:14px;padding:0 16px}
-.card.swap > *{animation:cardin .3s cubic-bezier(.2,.8,.2,1) both}
-.card.swap > *:nth-child(2){animation-delay:.02s}.card.swap > *:nth-child(3){animation-delay:.04s}.card.swap > *:nth-child(4){animation-delay:.06s}.card.swap > *:nth-child(5){animation-delay:.08s}
+.card .ctas .btn{min-height:38px;font-size:14px;padding:0 16px}
+.card.swap > *{animation:cardin .35s cubic-bezier(.2,.8,.2,1) both}
+.card.swap > *:nth-child(2){animation-delay:.03s}.card.swap > *:nth-child(3){animation-delay:.06s}.card.swap > *:nth-child(4){animation-delay:.09s}.card.swap > *:nth-child(5){animation-delay:.12s}
 @keyframes cardin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
-.tour{position:absolute;left:clamp(16px,3vw,40px);right:clamp(16px,3vw,40px);bottom:22px;display:flex;align-items:center;gap:10px;z-index:6}
+.tour{position:absolute;left:clamp(16px,2.5vw,32px);right:clamp(16px,2.5vw,32px);bottom:22px;display:flex;align-items:center;gap:8px;z-index:6}
 .chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1}
 .chips::-webkit-scrollbar{display:none}
-.chip{flex:none;border:0;background:rgba(255,255,255,.92);color:var(--ink);font-family:var(--f-body);font-weight:700;font-size:13px;height:38px;padding:0 12px;border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:8px;position:relative;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.chip em{font-style:normal;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
-.chip.on{background:var(--red);color:#fff}
-.chip.on em{color:#ffd9db}
-.chip .bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--yellow);transform-origin:left;transform:scaleX(0)}
-.arrow{flex:none;width:38px;height:38px;border-radius:4px;border:0;background:#fff;color:var(--ink);cursor:pointer;font-size:18px;font-weight:800;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.arrow:hover{background:var(--red);color:#fff}
-.hint{position:absolute;right:clamp(16px,3vw,40px);top:18px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;color:var(--muted);background:rgba(255,255,255,.8);padding:6px 10px;border-radius:4px;z-index:4}
+.chip{flex:none;border:0;background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);color:var(--ink);font:500 13px/1 var(--f-text);height:36px;padding:0 14px;border-radius:980px;cursor:pointer;display:flex;align-items:center;gap:7px;position:relative;overflow:hidden}
+.chip em{font-style:normal;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip.on{background:var(--ink);color:#fff}
+.chip.on em{color:var(--on-night-muted)}
+.chip .bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--yellow);transform-origin:left;transform:scaleX(0)}
+.arrow{flex:none;width:36px;height:36px;border-radius:50%;border:0;background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);color:var(--ink);cursor:pointer;font-size:20px;line-height:1;display:grid;place-items:center}
+.arrow:hover{background:var(--ink);color:#fff}
+.hint{position:absolute;right:clamp(16px,2.5vw,32px);top:18px;font-size:12px;color:var(--ink-2);background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);padding:6px 12px;border-radius:980px;z-index:4}
 
-/* ---------- разделы ---------- */
-.sec{padding-block:clamp(64px,8vw,104px)}
-.sec + .sec{padding-top:0}
-.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px 40px;margin-bottom:36px}
-.head > div{display:flex;flex-direction:column;gap:12px;min-width:0}
-.head .lead{max-width:440px;color:var(--ink-2)}
-
+/* ---------- продукция ---------- */
 .gallery{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:16px}
-.gallery figure{margin:0;position:relative;border-radius:6px;overflow:hidden;background:var(--paper);min-width:0}
-.gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform .6s ease}
-.gallery figure:hover img{transform:scale(1.04)}
+.gallery figure{margin:0;position:relative;border-radius:var(--r-tile);overflow:hidden;background:var(--mist);min-width:0}
+.gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.gallery figure:hover img{transform:scale(1.03)}
 .gallery .g-main{grid-row:span 2}
-.gallery .g-main img{aspect-ratio:auto;min-height:100%;object-position:center}
+.gallery .g-main img{aspect-ratio:auto;min-height:100%}
 .gallery .g-wide{grid-column:span 2}
 .gallery .g-wide img{aspect-ratio:21/9}
-.gallery figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);color:var(--ink);font-size:13px;font-weight:800;padding:6px 10px;border-radius:4px}
+.gallery figcaption{position:absolute;left:14px;bottom:14px;background:var(--glass-strong);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);color:var(--ink);font-size:13px;font-weight:600;padding:6px 12px;border-radius:980px}
 .sizes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.size{background:var(--paper);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--line);min-width:0}
-.size.pop{border:2px solid var(--red)}
+.size{background:var(--mist);border-radius:var(--r-tile);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:12px;min-width:0}
+.size.pop{background:var(--paper);box-shadow:inset 0 0 0 2px var(--red)}
 .size svg{width:100%;height:150px}
-.size .tag{font-family:var(--f-mono);font-size:12px;font-weight:700;color:var(--red-ink);letter-spacing:.1em;text-transform:uppercase}
-.size h3{font-size:22px}
-.size p{color:var(--ink-2);font-size:15px}
-.kv{display:flex;flex-direction:column;border-top:1px solid var(--line)}
-.kv div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.size .tag{font-size:var(--fs-small);font-weight:600;color:var(--red-ink)}
+.size h3{font-size:clamp(22px,2.2vw,28px);font-variant-numeric:tabular-nums}
+.size p{color:var(--muted);font-size:15px}
+.kv{display:flex;flex-direction:column;margin-top:4px}
+.kv div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--hair);font-size:15px}
 .kv span{color:var(--muted)}
-.kv b{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
+.kv b{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.size .btn{margin-top:auto;align-self:flex-start}
 
-.spec{margin-top:16px;background:var(--ink);color:#F1EFEA;border-radius:6px;padding:22px 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px 24px}
-.spec div{display:flex;flex-direction:column;gap:2px}
-.spec span{font-size:13px;color:#B9B5AD}
-.spec b{font-family:var(--f-mono);color:var(--yellow);font-size:16px}
+.specs{margin-top:clamp(56px,7vw,96px)}
+.specs h3{margin-bottom:20px}
+.spec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,5vw,64px);border-bottom:1px solid var(--hair)}
+.spec div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid var(--hair)}
+.spec span{color:var(--muted)}
+.spec b{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
 
-.prices{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:16px}
-.ptable{background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.prow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:16px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line)}
-.prow:last-child{border-bottom:0}
-.prow .v b{display:block;font-weight:800}
-.prow .v span,.prow .s{font-size:13px;color:var(--muted)}
-.prow .p{font-family:var(--f-display);font-size:clamp(18px,2vw,24px);font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
-.prow.best{background:#FFF8E1}
-.prow.best .s{color:var(--red-ink);font-weight:700}
-.cat2{background:var(--red);color:#fff;border-radius:6px;padding:26px;display:flex;flex-direction:column;gap:12px}
-.cat2 .eyebrow{color:#FFD9DB}
-.cat2 h3{font-size:22px}
-.cat2 .big{font-family:var(--f-display);font-size:clamp(34px,3.6vw,44px);font-weight:800;line-height:1}
-.cat2 .big small{font-family:var(--f-body);font-size:15px;font-weight:600;color:#FFD9DB}
-.cat2 p{font-size:15px;color:#FFE9EA}
-.note{font-size:14px;color:var(--muted);margin-top:14px}
+/* ---------- цены ---------- */
+.prices{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:16px}
+.ptable{background:var(--paper);border-radius:var(--r-tile);overflow:hidden;padding:8px clamp(20px,3vw,36px)}
+.prow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:16px;align-items:center;padding:20px 0;border-top:1px solid var(--hair)}
+.prow:first-child{border-top:0}
+.prow .v b{display:block;font-size:19px;font-weight:600}
+.prow .v span,.prow .s{font-size:var(--fs-small);color:var(--muted)}
+.prow .p{font-family:var(--f-display);font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-.02em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.prow.best .s{color:var(--red-ink);font-weight:600}
+.prow.best .p{color:var(--red-ink)}
+.cat2{background:var(--night-tile);color:var(--on-night);border-radius:var(--r-tile);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:12px}
+.cat2 .eyebrow{color:var(--yellow);font-size:var(--fs-small)}
+.cat2 h3{font-size:24px}
+.cat2 .big{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;white-space:nowrap;font-family:var(--f-display);font-size:clamp(40px,4.2vw,56px);font-weight:700;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.cat2 .big small{font-family:var(--f-text);font-size:17px;font-weight:500;color:var(--on-night-muted);-webkit-text-fill-color:var(--on-night-muted)}
+.cat2 p{font-size:15px;color:var(--on-night-muted)}
+.note{font-size:var(--fs-small);color:var(--muted);margin-top:20px;max-width:760px}
 
-.calc{background:var(--paper);border:1px solid var(--line);border-radius:6px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
-.cform{padding:clamp(20px,3.5vw,40px);display:flex;flex-direction:column;gap:22px;min-width:0}
-.segs{display:flex;flex-wrap:wrap;gap:8px}
-.seg{min-height:44px;padding:0 16px;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;background:var(--bg);color:var(--ink);border:1px solid var(--line);font-family:var(--f-body)}
-.seg[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+/* ---------- калькулятор ---------- */
+.calc{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:16px}
+.cform{background:var(--mist);border-radius:var(--r-tile);padding:clamp(22px,3.5vw,40px);display:flex;flex-direction:column;gap:24px;min-width:0}
+.segs{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;background:var(--seg);border-radius:980px;align-self:flex-start;max-width:100%}
+.seg{min-height:36px;padding:0 16px;border-radius:980px;font:500 14px/1 var(--f-text);cursor:pointer;background:transparent;color:var(--ink-2);border:0;transition:background-color .2s,box-shadow .2s,color .2s}
+.seg[aria-pressed="true"]{background:var(--paper);color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 1px rgba(0,0,0,.04)}
 .fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
-.fl{display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:700;color:var(--ink-2)}
-.fl input{height:50px;padding:0 14px;border-radius:4px;border:1px solid #D3CEC3;background:var(--bg);color:var(--ink);font-size:18px;font-weight:700;width:100%;font-family:var(--f-body)}
-.lbl{font-size:13.5px;font-weight:700;color:var(--ink-2);margin-bottom:8px}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:var(--fs-small);font-weight:500;color:var(--ink-2)}
+.fl input{height:52px;padding:0 16px;border-radius:var(--r-field);border:1px solid var(--hair);background:var(--paper);color:var(--ink);font:500 19px/1 var(--f-text);width:100%;font-variant-numeric:tabular-nums}
+.fl input:focus,.form input:focus,.form textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(196,32,42,.16)}
+.lbl{font-size:var(--fs-small);font-weight:500;color:var(--ink-2);margin-bottom:8px}
 .chk{display:flex;align-items:center;gap:10px;cursor:pointer;min-height:40px;font-size:15px}
 .chk input{width:20px;height:20px;accent-color:var(--red)}
-.receipt{background:var(--ink);color:#F1EFEA;padding:clamp(20px,3.5vw,36px);display:flex;flex-direction:column;min-width:0;border-radius:0 6px 6px 0}
-.receipt .t{font-family:var(--f-mono);font-size:12px;font-weight:700;letter-spacing:.14em;color:#B9B5AD;margin-bottom:8px}
-.ln{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed #44464C;font-size:15px}
-.ln span{color:#C9C5BD}
-.ln b{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
-.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:14px}
-.total span{font-weight:800}
-.total b{font-family:var(--f-display);font-size:clamp(22px,2.4vw,30px);color:var(--yellow);font-variant-numeric:tabular-nums}
-.warn{font-size:14px;color:#FFB3B8;font-weight:700;margin-top:8px}
-.receipt .small{font-size:12.5px;color:#9E9A92;margin-top:10px}
-.receipt .btn{margin-top:16px}
+.receipt{background:var(--night-tile);color:var(--on-night);border-radius:var(--r-tile);padding:clamp(22px,3.5vw,36px);display:flex;flex-direction:column;min-width:0}
+.receipt .t{font-size:var(--fs-small);font-weight:600;color:var(--on-night-muted);margin-bottom:8px}
+.ln{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--night-hair);font-size:15px}
+.ln span{color:var(--on-night-muted)}
+.ln b{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:16px}
+.total span{font-weight:600;font-size:19px}
+.total b{font-family:var(--f-display);font-size:clamp(26px,2.8vw,36px);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.warn{font-size:var(--fs-small);color:var(--warn);font-weight:600;margin-top:8px}
+.receipt .small{font-size:12.5px;color:var(--on-night-muted);margin-top:12px}
+.receipt .btn{margin-top:18px}
 
-.cert{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(24px,5vw,56px);align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:clamp(20px,4vw,44px)}
-.cert-thumb{display:block;border:0;padding:0;background:none;cursor:zoom-in}
-.lightbox{position:fixed;inset:0;z-index:300;background:rgba(20,21,23,.86);display:flex;flex-direction:column}
-.lb-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top,0px));color:#fff;font-weight:700;font-size:14px}
-.lb-close{width:44px;height:44px;border-radius:6px;border:0;background:#fff;color:var(--ink);font-size:18px;font-weight:800;cursor:pointer;flex:none}
-.lb-body{flex:1;overflow:auto;padding:0 16px 24px;display:flex;flex-direction:column;align-items:center;gap:16px}
-.lb-body img{width:min(900px,100%);height:auto;background:#fff;border-radius:4px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
-.cert img{border:1px solid var(--line);border-radius:4px;box-shadow:0 14px 30px rgba(27,28,31,.14)}
-.cert-body{display:flex;flex-direction:column;gap:16px;min-width:0}
-.cert-body p{color:var(--ink-2)}
-.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 24px}
+/* ---------- сертификат ---------- */
+.cert{display:grid;grid-template-columns:minmax(0,.5fr) minmax(0,1.5fr);gap:clamp(28px,5vw,64px);align-items:center;background:var(--paper);border-radius:var(--r-tile);padding:clamp(24px,4.5vw,56px)}
+.cert-thumb{display:block;border:0;padding:0;background:none;cursor:zoom-in;border-radius:8px}
+.cert-thumb img{border-radius:6px;box-shadow:0 24px 48px rgba(29,29,31,.16),0 2px 6px rgba(29,29,31,.08);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.cert-thumb:hover img{transform:translateY(-4px) rotate(-.6deg)}
+.cert-body{display:flex;flex-direction:column;gap:18px;min-width:0}
+.cert-body h2{font-size:clamp(30px,3.8vw,44px)}
+.cert-body p{color:var(--muted)}
+.cgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 28px}
 .cgrid span{display:block;font-size:13px;color:var(--muted)}
-.cgrid b{font-size:15.5px}
-.cert .btn{align-self:flex-start}
+.cgrid b{font-size:15.5px;font-weight:600}
+.cert .row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px}
+.lightbox{position:fixed;inset:0;z-index:300;background:rgba(11,11,12,.86);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:flex;flex-direction:column}
+.lb-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top,0px));color:#fff;font-weight:600;font-size:14px}
+.lb-close{width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:16px;font-weight:700;cursor:pointer;flex:none}
+.lb-body{flex:1;overflow:auto;padding:0 16px 24px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.lb-body img{width:min(900px,100%);height:auto;background:#fff;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
 
-.contacts{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:16px}
+/* ---------- контакты ---------- */
+.contacts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
 .cleft{display:flex;flex-direction:column;gap:16px;min-width:0}
-.cards2{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
-.cc{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:3px}
+.cards2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cc-wide{grid-column:1 / -1}
+.cc{background:var(--mist);border-radius:var(--r-card);padding:20px 22px;display:flex;flex-direction:column;gap:4px}
 .cc span{font-size:13px;color:var(--muted)}
-.cc .num{font-size:20px;font-weight:800;color:var(--ink);text-decoration:none;font-variant-numeric:tabular-nums;user-select:all}
-.cc b{font-size:16px}
-.cbtns{display:flex;flex-wrap:wrap;gap:10px}
-.btn-wa{background:#1FA855;color:#fff}
-.btn-wa:hover{background:#178A45;color:#fff}
-.form{background:var(--paper);border:2px solid var(--red);border-radius:6px;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:16px;min-width:0}
+.cc .num{font-family:var(--f-display);font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;user-select:all}
+.cc b{font-size:16px;font-weight:600}
+.cbtns{display:flex;flex-wrap:wrap;gap:12px}
+.form{background:var(--mist);border-radius:var(--r-tile);padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:16px;min-width:0}
 .form form{display:flex;flex-direction:column;gap:14px}
-.form h3{font-size:22px}
-.form label{display:flex;flex-direction:column;gap:6px;font-size:13.5px;font-weight:700;color:var(--ink-2)}
-.form input,.form textarea{border:1px solid #D3CEC3;background:var(--bg);border-radius:4px;font-size:16px;padding:12px 14px;width:100%;font-family:var(--f-body);color:var(--ink)}
-.form textarea{resize:vertical;min-height:96px}
+.form h3{font-size:28px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:var(--fs-small);font-weight:500;color:var(--ink-2)}
+.form label small{font-weight:400;color:var(--muted);font-size:inherit}
+.form input,.form textarea{border:1px solid var(--hair);background:var(--paper);border-radius:var(--r-field);font:400 17px/1.4 var(--f-text);padding:13px 16px;width:100%;color:var(--ink)}
+.form textarea{resize:vertical;min-height:100px}
 .form .small{font-size:12.5px;color:var(--muted)}
-.sent{display:flex;flex-direction:column;gap:12px}
+.form .btn{align-self:flex-start}
+.sent{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .sent p{color:var(--ink-2)}
 
-footer{background:var(--ink);color:#B9B5AD;font-size:14.5px;margin-top:clamp(64px,8vw,104px)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px;padding-block:36px}
-footer .col{display:flex;flex-direction:column;gap:6px}
-footer .brand{font-family:var(--f-display);font-weight:700;font-size:17px;color:#fff}
+/* ---------- подвал ---------- */
+footer{background:var(--mist);color:var(--muted);font-size:var(--fs-micro);line-height:1.5}
+footer .wrap{padding-block:28px 40px;display:flex;flex-direction:column;gap:18px}
+.fnotes{display:flex;flex-direction:column;gap:8px;padding-bottom:18px;border-bottom:1px solid var(--hair);margin:0;padding-left:18px}
+.fcols{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 40px}
+.fcols .col{display:flex;flex-direction:column;gap:4px}
+.fcols .brand{font-size:var(--fs-small);font-weight:600;color:var(--ink)}
+
+/* ---------- появление при прокрутке ---------- */
+.rv{opacity:.35;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
 
 /* ---------- анимированный логотип ---------- */
 .lg{position:relative;display:block;aspect-ratio:685/244;max-width:100%}
@@ -227,40 +330,54 @@ footer .brand{font-family:var(--f-display);font-weight:700;font-size:17px;color:
 @keyframes lIn{0%{opacity:0;transform:translateX(var(--fx)) scaleX(.6);filter:blur(6px)}100%{opacity:1;transform:none;filter:none}}
 @keyframes subIn{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 @keyframes shine{0%{opacity:1;background-position:-60% 0}100%{opacity:1;background-position:160% 0}}
-.top .logo{display:block;width:132px}
-.intro{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px;transition:background-color .6s ease,opacity .5s ease}
-.intro .lg{width:min(720px,86vw)}
-.intro.fly{background-color:rgba(244,243,239,0)}
-.intro .skip{position:absolute;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));border:0;background:none;color:var(--muted);font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;cursor:pointer;padding:10px}
-.intro .skip:hover{color:var(--ink)}
-@media (prefers-reduced-motion:reduce){.intro{display:none}}
 
 @media (max-width:900px){
-  .world{height:auto;overflow:visible;background:var(--bg)}
-  .stage{position:relative;height:62vh;min-height:360px;max-height:560px;background:var(--sky);overflow:hidden}
-  .card{position:relative;left:auto;bottom:auto;width:auto;margin:0 16px;transform:translateY(-14px);box-shadow:0 8px 30px rgba(30,30,30,.1)}
+  .world-box{height:auto;overflow:visible;background:none;border-radius:0}
+  .stage{position:relative;height:62vh;min-height:360px;max-height:560px;background:var(--sky);border-radius:var(--r-card)}
+  .card{position:relative;left:auto;bottom:auto;width:auto;margin:-18px 12px 0;box-shadow:0 12px 32px rgba(0,0,0,.2)}
   .tour{bottom:12px;left:12px;right:12px}
   .hint{display:none}
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .t-photo{grid-column:span 2;grid-row:auto}
+  .t-sm{grid-column:span 1}
+  .t-wide-m{grid-column:span 2}
   .sizes,.prices,.calc,.cert,.contacts{grid-template-columns:1fr}
+  .spec{grid-template-columns:1fr}
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .g-main{grid-row:auto;grid-column:span 2}
   .gallery .g-main img{aspect-ratio:4/3}
-  .receipt{border-radius:0 0 6px 6px}
-  .top nav{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
-  .top nav a{white-space:nowrap}
+  .cert-thumb{max-width:280px;margin-inline:auto}
 }
-@media (max-width:520px){
-  .top .btn{display:none}
+@media (max-width:833px){
+  .lnav nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--glass-strong);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);padding:8px var(--gutter) 16px}
+  .lnav.open nav{display:flex}
+  .lnav nav a{font-size:17px;padding:12px 0;border-bottom:1px solid var(--hair)}
+  .lnav nav a:last-child{border-bottom:0}
+  .lnav .chev{display:grid}
+  .lnav .right{gap:8px}
+  .gnav .meta span{display:none}
+}
+@media (max-width:560px){
+  .lnav .ttl{font-size:19px}
   .prow{grid-template-columns:minmax(0,1fr) auto}
   .prow .s{grid-column:1 / -1;order:3}
   .pin span{display:none}
+  .bento{grid-template-columns:1fr}
+  .t-photo,.t-sm,.t-wide-m{grid-column:auto}
+  .gallery{grid-template-columns:1fr}
+  .gallery .g-main,.gallery .g-wide{grid-column:auto}
+  .gallery .g-wide img{aspect-ratio:4/3}
+  .cards2,.cgrid{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
 }
 </style>
+</head>
+<body>
 
-<div class="intro" id="intro" aria-hidden="true"><span class="lg" id="lgIntro"></span><button class="skip" type="button">ПРОПУСТИТЬ →</button></div>
 <div class="lightbox" id="certBox" role="dialog" aria-modal="true" aria-label="Сертификат соответствия" hidden>
   <div class="lb-bar"><span>Сертификат соответствия № KZ.7500551.01.01.51420</span><button class="lb-close" type="button" id="certClose" aria-label="Закрыть">✕</button></div>
   <div class="lb-body" id="certBody">
@@ -268,95 +385,144 @@ footer .brand{font-family:var(--f-display);font-weight:700;font-size:17px;color:
     <img src="img/cert-2.jpg" alt="Сертификат соответствия, страница 2" loading="lazy">
   </div>
 </div>
-<header class="top">
+
+<header class="gnav">
   <div class="wrap">
-    <a class="logo" href="#world" aria-label="STROY GOOD — фабрика газоблоков, наверх"><span class="lg" id="lgHead"></span></a>
-    <nav aria-label="Разделы">
-      <a href="#world">Завод</a>
-      <a href="#products">Продукция</a>
-      <a href="#prices">Цены</a>
-      <a href="#calc">Калькулятор</a>
-      <a href="#certificate">Сертификат</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-    <div class="call">
+    <a class="logo" href="#top" aria-label="STROY GOOD — фабрика газоблоков, наверх"><span class="lg" id="lgHead"></span></a>
+    <div class="meta">
+      <span>Пн–Пт, 08:00–17:00</span>
       <button class="phone copyn" type="button" data-copy="+7 771 055 98 06" title="Скопировать номер">+7 771 055 98 06</button>
-      <a class="btn btn-red" href="#contacts">Оставить заявку</a>
     </div>
   </div>
 </header>
 
-<section class="world" id="world" aria-label="3D-экскурсия по заводу">
-  <div class="stage" id="stage">
-    <div class="pins" id="pins"></div>
-    <div class="hint">ПОТЯНИТЕ МЫШЬЮ — ОБЛЁТ · НАЖМИТЕ НА ТОЧКУ</div>
-    <div class="tour">
-      <button class="arrow" id="prev" type="button" aria-label="Предыдущий участок">‹</button>
-      <div class="chips" id="chips" role="tablist" aria-label="Участки завода"></div>
-      <button class="arrow" id="next" type="button" aria-label="Следующий участок">›</button>
+<div class="lnav" id="lnav">
+  <div class="wrap">
+    <a class="ttl" href="#top">Газоблок D500</a>
+    <div class="right">
+      <nav id="lnavLinks" aria-label="Разделы">
+        <a href="#highlights">Обзор</a>
+        <a href="#world">3D-завод</a>
+        <a href="#products">Продукция</a>
+        <a href="#prices">Цены</a>
+        <a href="#calc">Калькулятор</a>
+        <a href="#certificate">Сертификат</a>
+      </nav>
+      <button class="chev" id="lnavToggle" type="button" aria-label="Разделы сайта" aria-expanded="false" aria-controls="lnavLinks"><svg width="14" height="8" viewBox="0 0 14 8" aria-hidden="true"><path d="M1 1l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <a class="btn btn-red btn-sm" href="#contacts">Заказать</a>
     </div>
   </div>
-  <div class="card" id="card" aria-live="polite">
-    <div class="eyebrow"><b id="cNum">01</b><span id="cEye">Завод газоблока · Астана</span></div>
-    <h1 id="cTitle">STROY GOOD — газоблок напрямую с завода</h1>
-    <p id="cText">Автоклавный стеновой блок D500, 625 × 300 мм. Производим, храним и отгружаем с одной площадки в Астане.</p>
-    <div class="facts" id="cFacts"><div><b>от 42 300 ₸</b><span>за 1 м³, самовывоз</span></div><div><b>B1,5–B3,5</b><span>класс прочности</span></div><div><b>F25</b><span>морозостойкость</span></div></div>
-    <div class="ctas" id="cCtas"><a class="btn btn-red" href="#calc">Рассчитать заказ</a><button class="btn btn-line" type="button" data-go="1">Пройти по заводу →</button></div>
+</div>
+
+<main>
+<section class="hero" id="top" aria-label="Газоблок STROY GOOD">
+  <div class="wrap">
+    <span class="eyebrow">Завод газоблока · Астана</span>
+    <h1>Газоблок D500</h1>
+    <p class="sub">Автоклавный. Ровный. Прямо с завода.</p>
+    <p class="lead">Стеновой блок 625 × 300 мм. Производим, храним и отгружаем с одной площадки в Астане.</p>
+    <p class="price num">от 42 300 ₸ за 1 м³<sup><a class="fn-ref" href="#fn1" aria-label="Сноска 1">1</a></sup></p>
+    <div class="ctas"><a class="btn btn-red" href="#calc">Рассчитать заказ</a><a class="more" href="#world">Посмотреть завод</a></div>
+  </div>
+  <img class="hero-img" src="img/photo-block.jpg" alt="Автоклавный газоблок STROY GOOD" width="1400" height="1050" fetchpriority="high">
+  <div class="wrap">
+    <div class="ticks">
+      <div><b>100 · 200 · 250</b>толщины, мм</div>
+      <div><b>B1,5–B3,5</b>класс прочности</div>
+      <div><b>ГОСТ 31360</b>сертифицировано</div>
+    </div>
   </div>
 </section>
 
-<main>
-<section class="sec" id="products">
+<section class="band band-mist" id="highlights">
   <div class="wrap">
-    <div class="head">
-      <div><span class="eyebrow">Продукция</span><h2>Три толщины, одна цена</h2></div>
-      <p class="lead">Длина 625 мм и высота 300 мм у всех блоков. Марка по плотности D500, автоклавное твердение.</p>
+    <div class="head rv-item"><span class="eyebrow">Обзор</span><h2>Всё, что важно в стене.</h2></div>
+    <div class="bento">
+      <div class="tile t-photo rv-item">
+        <div class="txt"><h3>Кладка на клей. Тонкий шов.</h3><p>Длина 625 и высота 300 мм у всех блоков. Массив режут струнами, поэтому геометрия точная и стена собирается ровно.</p></div>
+        <img src="img/photo-house.jpg" alt="Кладка стены из газоблока на клей с тонким швом" loading="lazy">
+      </div>
+      <div class="tile t-sm rv-item"><span class="big grad">0,12</span><span class="unit">Вт/м·°С</span><p>Теплопроводность блока D500.</p></div>
+      <div class="tile t-sm rv-item"><span class="big grad">F25</span><span class="unit">морозостойкость</span><p>Марка по морозостойкости.</p></div>
+      <div class="tile t-sm rv-item"><span class="big">0,5</span><span class="unit">мм/м</span><p>Усадка при высыхании. Автоклав даёт меньше усадки, поэтому стены меньше трещат.</p></div>
+      <div class="tile t-sm rv-item"><span class="big">23%</span><span class="unit">отпускная влажность</span><p>Паропроницаемость 0,2 мг/м·ч·Па.</p></div>
+      <div class="tile t-sm t-dark t-wide-m rv-item"><span class="unit">Сертификат соответствия</span><p>ГОСТ 31360-2007 и ТР РК № 435. Действует до 30.10.2026.</p><a class="more" href="#certificate">Смотреть сертификат</a></div>
     </div>
-    <div class="gallery">
+  </div>
+</section>
+
+<section class="band band-night on-night" id="world" aria-label="3D-экскурсия по заводу">
+  <div class="wrap">
+    <div class="head rv-item"><span class="eyebrow">3D-экскурсия</span><h2>Загляните на завод.</h2><p class="lead">Пролетите по цепочке производства: сырьё, формовка, автоклав, склад и доставка к вашему дому.</p></div>
+  </div>
+  <div class="wrap-wide">
+    <div class="world-box rv-item">
+      <div class="stage" id="stage">
+        <div class="pins" id="pins"></div>
+        <div class="hint">Потяните мышью для облёта · нажмите на точку</div>
+        <div class="tour">
+          <button class="arrow" id="prev" type="button" aria-label="Предыдущий участок">‹</button>
+          <div class="chips" id="chips" role="tablist" aria-label="Участки завода"></div>
+          <button class="arrow" id="next" type="button" aria-label="Следующий участок">›</button>
+        </div>
+      </div>
+      <div class="card" id="card" aria-live="polite">
+        <div class="step"><b id="cNum">01</b><span id="cEye">Завод газоблока · Астана</span></div>
+        <div class="h" id="cTitle">STROY GOOD — газоблок напрямую с завода</div>
+        <p id="cText">Автоклавный стеновой блок D500, 625 × 300 мм. Производим, храним и отгружаем с одной площадки в Астане.</p>
+        <div class="facts" id="cFacts"><div><b>от 42 300 ₸</b><span>за 1 м³, самовывоз</span></div><div><b>B1,5–B3,5</b><span>класс прочности</span></div><div><b>F25</b><span>морозостойкость</span></div></div>
+        <div class="ctas" id="cCtas"><a class="btn btn-red" href="#calc">Рассчитать заказ</a><button class="btn btn-line" type="button" data-go="1">Пройти по заводу →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="products">
+  <div class="wrap">
+    <div class="head rv-item"><span class="eyebrow">Продукция</span><h2>Три толщины. Одна цена.</h2><p class="lead">Длина 625 мм и высота 300 мм у всех блоков. Марка по плотности D500, автоклавное твердение.</p></div>
+    <div class="gallery rv-item">
       <figure class="g-main"><img src="img/photo-sizes.jpg" alt="Газоблоки 625 × 300 мм толщиной 100, 200 и 250 мм" loading="lazy"><figcaption>Блоки 100, 200 и 250 мм</figcaption></figure>
       <figure><img src="img/photo-block.jpg" alt="Автоклавный газоблок крупным планом" loading="lazy"><figcaption>Пористая структура D500</figcaption></figure>
       <figure><img src="img/photo-pallet.jpg" alt="Европоддон 1200 × 800 с газоблоком 625 × 300 × 200, 32 шт" loading="lazy"><figcaption>Европоддон в стрейч-плёнке</figcaption></figure>
       <figure class="g-wide"><img src="img/photo-house.jpg" alt="Кладка стены из газоблока на клей с тонким швом" loading="lazy"><figcaption>Кладка на клей, тонкий шов</figcaption></figure>
     </div>
-    <div class="sizes" id="sizes"></div>
-    <div class="spec">
-      <div><span>Марка по плотности</span><b>D500</b></div>
-      <div><span>Класс прочности</span><b>B1,5 · B2,0 · B2,5 · B3,5</b></div>
-      <div><span>Теплопроводность</span><b>0,12 Вт/м·°С</b></div>
-      <div><span>Паропроницаемость</span><b>0,2 мг/м·ч·Па</b></div>
-      <div><span>Морозостойкость</span><b>F25</b></div>
-      <div><span>Отпускная влажность</span><b>23%</b></div>
-      <div><span>Усадка при высыхании</span><b>0,5 мм/м</b></div>
+    <div class="sizes rv-item" id="sizes"></div>
+    <div class="specs rv-item">
+      <h3>Технические характеристики</h3>
+      <div class="spec">
+        <div><span>Марка по плотности</span><b>D500</b></div>
+        <div><span>Класс прочности</span><b>B1,5 · B2,0 · B2,5 · B3,5</b></div>
+        <div><span>Теплопроводность</span><b>0,12 Вт/м·°С</b></div>
+        <div><span>Паропроницаемость</span><b>0,2 мг/м·ч·Па</b></div>
+        <div><span>Морозостойкость</span><b>F25</b></div>
+        <div><span>Отпускная влажность</span><b>23%</b></div>
+        <div><span>Усадка при высыхании</span><b>0,5 мм/м</b></div>
+        <div><span>Размер</span><b>625 × 300 × 100 / 200 / 250 мм</b></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="prices">
+<section class="band band-mist" id="prices">
   <div class="wrap">
-    <div class="head">
-      <div><span class="eyebrow">Цена за 1 м³ · самовывоз</span><h2>Больше объём — ниже цена</h2></div>
-      <p class="lead">Цена одинаковая для всех толщин. При объёме свыше 500 м³ возможна отсрочка платежа.</p>
-    </div>
-    <div class="prices">
+    <div class="head rv-item"><span class="eyebrow">Цена за 1 м³ · самовывоз</span><h2>Больше объём, ниже цена.</h2><p class="lead">Цена одинаковая для всех толщин. При объёме свыше 500 м³ возможна отсрочка платежа.</p></div>
+    <div class="prices rv-item">
       <div class="ptable" id="ptable"></div>
       <div class="cat2">
         <span class="eyebrow">Выгодное предложение</span>
         <h3>Газоблок II категории</h3>
-        <div class="big">32 000 ₸<small> / м³</small></div>
+        <div class="big"><span class="grad">32 000 ₸</span><small> / м³</small></div>
         <p>Тот же автоклавный газобетон с небольшими отклонениями геометрии и мелкими сколами. Подходит, когда идеальная геометрия не главное.</p>
       </div>
     </div>
-    <p class="note">Доставка длинномером по городу — 1 800 ₸ за 1 м³, от 28 поддонов. Залог за европоддон 800 × 1200 — 2 600 ₸, возвращается при возврате поддона.</p>
+    <p class="note">Доставка длинномером по городу: 1 800 ₸ за 1 м³, от 28 поддонов. Залог за европоддон 800 × 1200: 2 600 ₸, возвращается при возврате поддона.</p>
   </div>
 </section>
 
-<section class="sec" id="calc">
+<section class="band" id="calc">
   <div class="wrap">
-    <div class="head">
-      <div><span class="eyebrow">Калькулятор</span><h2>Посчитайте свой заказ</h2></div>
-      <p class="lead">Введите размеры стен или сразу объём. Расчёт округляется до целых поддонов, запас 5% уже учтён.</p>
-    </div>
-    <div class="calc">
+    <div class="head rv-item"><span class="eyebrow">Калькулятор</span><h2>Посчитайте свой заказ.</h2><p class="lead">Введите размеры стен или сразу объём. Расчёт округляется до целых поддонов, запас 5% уже учтён.</p></div>
+    <div class="calc rv-item">
       <div class="cform">
         <div class="segs" role="group" aria-label="Способ расчёта">
           <button type="button" class="seg" data-mode="walls" aria-pressed="true">По размерам стен</button>
@@ -384,7 +550,7 @@ footer .brand{font-family:var(--f-display);font-weight:700;font-size:17px;color:
         </div>
       </div>
       <div class="receipt" aria-live="polite">
-        <div class="t">РАСЧЁТ</div>
+        <div class="t">Расчёт</div>
         <div class="ln" id="rAreaRow"><span>Площадь кладки</span><b><span id="rArea">0</span> м²</b></div>
         <div class="ln"><span>Поддонов</span><b id="rPal">0</b></div>
         <div class="ln"><span>Объём к оплате</span><b><span id="rVol">0</span> м³</b></div>
@@ -403,45 +569,42 @@ footer .brand{font-family:var(--f-display);font-weight:700;font-size:17px;color:
   </div>
 </section>
 
-<section class="sec" id="certificate">
+<section class="band band-mist" id="certificate">
   <div class="wrap">
-    <div class="cert">
+    <div class="cert rv-item">
       <button class="cert-thumb" type="button" data-cert aria-label="Открыть сертификат"><img src="img/sertifikat.jpg" alt="Сертификат соответствия ТОО Stroygood № KZ.7500551.01.01.51420" loading="lazy"></button>
       <div class="cert-body">
         <span class="eyebrow">Сертификат соответствия</span>
-        <h2>Продукция сертифицирована в Казахстане</h2>
+        <h2>Продукция сертифицирована в Казахстане.</h2>
         <p>Блоки из ячеистого бетона автоклавного твердения соответствуют ГОСТ 31360-2007 и ТР РК № 435 «О безопасности зданий и сооружений, строительных материалов и изделий». Радиационная безопасность проверена по ГОСТ 30108-94.</p>
         <div class="cgrid">
-          <div><span>Номер</span><b class="mono">KZ.7500551.01.01.51420</b></div>
-          <div><span>Действует</span><b>30.10.2025 — 30.10.2026</b></div>
+          <div><span>Номер</span><b class="num">KZ.7500551.01.01.51420</b></div>
+          <div><span>Действует</span><b class="num">30.10.2025 — 30.10.2026</b></div>
           <div><span>Классы и марки</span><b>B1,5–B3,5 / D500 / F25</b></div>
           <div><span>Орган сертификации</span><b>ТОО «Центр подтверждения соответствия продукции»</b></div>
         </div>
-        <button class="btn btn-line" type="button" data-cert>Открыть сертификат</button>
+        <div class="row"><button class="btn btn-line" type="button" data-cert>Открыть сертификат</button><a class="more" href="docs/sertifikat-stroygood.pdf" target="_blank" rel="noopener">PDF-версия</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="contacts">
+<section class="band" id="contacts">
   <div class="wrap">
-    <div class="head">
-      <div><span class="eyebrow">Контакты</span><h2>Готовы отгрузить ваш объём</h2></div>
-      <p class="lead">Позвоните в отдел продаж: подберём толщину, рассчитаем доставку и зарезервируем партию.</p>
-    </div>
-    <div class="contacts">
+    <div class="head rv-item"><span class="eyebrow">Контакты</span><h2>Готовы отгрузить ваш объём.</h2><p class="lead">Позвоните в отдел продаж: подберём толщину, рассчитаем доставку и зарезервируем партию.</p></div>
+    <div class="contacts rv-item">
       <div class="cleft">
         <div class="cards2">
-          <div class="cc"><span>Отдел продаж</span><button class="num copyn" type="button" data-copy="+7 771 055 98 06" title="Скопировать номер">+7 771 055 98 06</button><span class="copied" aria-live="polite"></span></div>
-          <div class="cc"><span>Адрес завода</span><b>г. Астана, район Байконыр, ул. С 346, здание 4</b><span>бывшая ул. Аксай 20</span></div>
+          <div class="cc"><span>Отдел продаж</span><button class="num copyn" type="button" data-copy="+7 771 055 98 06" title="Скопировать номер">+7 771 055 98 06</button></div>
           <div class="cc"><span>Режим работы</span><b>Пн–Пт, 08:00–17:00</b></div>
+          <div class="cc cc-wide"><span>Адрес завода</span><b>г. Астана, район Байконыр, ул. С 346, здание 4</b><span>бывшая ул. Аксай 20</span></div>
         </div>
         <div class="cbtns">
           <a class="btn btn-wa" href="https://wa.me/77710559806?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B3%D0%B0%D0%B7%D0%BE%D0%B1%D0%BB%D0%BE%D0%BA" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
             Написать в WhatsApp
           </a>
-          <a class="btn btn-line" href="https://go.2gis.com/0RHOd" target="_blank" rel="noopener">Открыть в 2ГИС и построить маршрут</a>
+          <a class="btn btn-line" href="https://go.2gis.com/0RHOd" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
         </div>
       </div>
       <div class="form">
@@ -449,7 +612,7 @@ footer .brand{font-family:var(--f-display);font-weight:700;font-size:17px;color:
           <h3>Заявка на расчёт</h3>
           <label for="fName">Ваше имя<input id="fName" type="text" placeholder="Как к вам обращаться" autocomplete="name"></label>
           <label for="fPhone">Телефон<input id="fPhone" type="tel" required placeholder="+7" autocomplete="tel"></label>
-          <label for="fEmail">Ваш e-mail <span style="font-weight:500;color:var(--muted)">(если удобнее получить ответ на почту)</span><input id="fEmail" type="email" placeholder="name@mail.kz" autocomplete="email"></label>
+          <label for="fEmail">E-mail <small>(если удобнее получить ответ на почту)</small><input id="fEmail" type="email" placeholder="name@mail.kz" autocomplete="email"></label>
           <label for="fMsg">Что нужно<textarea id="fMsg" rows="4" placeholder="Например: блок 200 мм, 30 м³, доставка длинномером"></textarea></label>
           <button class="btn btn-red" type="submit">Подготовить заявку</button>
           <p class="small">Заявка уходит сообщением в WhatsApp отдела продаж. Нажимая кнопку, вы соглашаетесь на обработку контактных данных.</p>
@@ -468,8 +631,14 @@ footer .brand{font-family:var(--f-display);font-weight:700;font-size:17px;color:
 
 <footer>
   <div class="wrap">
-    <div class="col"><span class="brand">STROY GOOD</span><span>Фабрика газоблоков · г. Астана, ул. С 346, здание 4</span><span>+7 771 055 98 06</span></div>
-    <div class="col"><span>ТОО «Stroygood», БИН 151140014540</span><span>© 2026</span></div>
+    <ol class="fnotes">
+      <li id="fn1">Цена 42 300 ₸ за 1 м³ действует при заказе более 100 м³ и самовывозе с завода. Цена одинаковая для всех толщин.</li>
+      <li>Доставка длинномером по городу: 1 800 ₸ за 1 м³, от 28 поддонов. Залог за европоддон 800 × 1200: 2 600 ₸, возвращается при возврате поддона.</li>
+    </ol>
+    <div class="fcols">
+      <div class="col"><span class="brand">STROY GOOD</span><span>Фабрика газоблоков · г. Астана, ул. С 346, здание 4</span><span>+7 771 055 98 06</span></div>
+      <div class="col"><span>ТОО «Stroygood», БИН 151140014540</span><span>© 2026</span></div>
+    </div>
   </div>
 </footer>
 
@@ -508,6 +677,7 @@ function buildLogo(el){
 function playLogo(el){ el.classList.remove('play'); void el.offsetWidth; el.classList.add('play'); }
 var lgHead=$('lgHead'); buildLogo(lgHead);
 lgHead.parentNode.addEventListener('mouseenter',function(){ playLogo(lgHead); });
+if(!reduce) requestAnimationFrame(function(){ playLogo(lgHead); });
 (function intro(){
   var ov=$('intro'); if(!ov) return;
   if(reduce){ ov.remove(); return; }
@@ -1485,7 +1655,7 @@ function isoBlock(mm){
   function poly(pts,fill){ return '<polygon points="'+pts.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ')+'" fill="'+fill+'" stroke="#C9C3B6" stroke-width="1.2" stroke-linejoin="round"/>'; }
   var top=[P(0,H,0),P(L,H,0),P(L,H,D),P(0,H,D)], front=[P(0,0,D),P(L,0,D),P(L,H,D),P(0,H,D)], side=[P(L,0,0),P(L,0,D),P(L,H,D),P(L,H,0)];
   var w=(L+D)*c+pad*2, h=(L+D)*s+H+pad*2, a=P(L/2,0,D), b=P(L,0,D/2);
-  var txt='font-family="JetBrains Mono,monospace" font-size="13" font-weight="700"';
+  var txt='font-family="-apple-system,BlinkMacSystemFont,Onest,Arial,sans-serif" font-size="13" font-weight="700"';
   return '<svg viewBox="0 0 '+w.toFixed(0)+' '+h.toFixed(0)+'" role="img" aria-label="Блок 625 × 300 × '+mm+' мм">'+poly(top,'#F8F6F1')+poly(front,'#ECE9E2')+poly(side,'#D6D1C6')+
     '<text x="'+(a[0]-14).toFixed(0)+'" y="'+(a[1]+20).toFixed(0)+'" '+txt+' fill="#6B6861" text-anchor="middle">625</text>'+
     '<text x="'+(b[0]+12).toFixed(0)+'" y="'+(b[1]+18).toFixed(0)+'" '+txt+' fill="#A51A23">'+mm+'</text></svg>';
@@ -1562,7 +1732,24 @@ $('fForm').addEventListener('submit',function(e){
   $('fForm').hidden=true; $('fSent').hidden=false;
 });
 $('fReset').addEventListener('click',function(){ $('fForm').hidden=false; $('fSent').hidden=true; });
+/* ================= ПОДМЕНЮ НА ТЕЛЕФОНЕ ================= */
+(function(){
+  var nav=$('lnav'), btn=$('lnavToggle');
+  function set(open){ nav.classList.toggle('open',open); btn.setAttribute('aria-expanded',open); }
+  btn.addEventListener('click',function(){ set(!nav.classList.contains('open')); });
+  $('lnavLinks').addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+})();
+/* ================= ПОЯВЛЕНИЕ ПРИ ПРОКРУТКЕ ================= */
+/* Только для блоков ниже первого экрана: всё, что видно при загрузке, остаётся на месте */
+(function(){
+  if(reduce || !('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting || e.boundingClientRect.top<0){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  document.querySelectorAll('.rv-item').forEach(function(el){
+    if(el.getBoundingClientRect().top>innerHeight){ el.classList.add('rv'); io.observe(el); }
+  });
+})();
 })();
 </script>
-
-</body></html>
+</body>
+</html>
